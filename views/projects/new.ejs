@@ -1,0 +1,12 @@
+<%- include("../partials/header")  %> 
+    <h1>Add Project</h1>
+    <form id="new-project" action="/projects" method="POST">
+        <label>Title:</label>
+        <input type="text" name="title">
+        <label>Posting:</label>
+        <input type="text" name="posting">
+        <label>Description:</label>
+        <input type="text" name="description">
+        <input type="submit" value="Add Project">
+      </form>
+<%- include("../partials/footer")  %> 

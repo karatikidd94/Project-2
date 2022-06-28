@@ -1,3 +1,23 @@
 <%- include("../partials/header")  %> 
     <h1>Project's List</h1>
+    <table id="list">
+        <thead>
+          <tr>
+            <th>Project</th>
+            <th>Description</th>
+            <th>Posting</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% projects.forEach(function(p) { %>
+            <tr>
+              <td><%= p.title %></td>
+              <td><%= p.description %></td>
+              <td><%= p.posting %></td>
+              <td><a href="/projects/<%= p._id %>">DETAILS</a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
 <%- include("../partials/footer")  %> 

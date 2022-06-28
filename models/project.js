@@ -25,6 +25,7 @@ const projectSchema = new Schema({
     },
     posting: {
         type: String,
+        enum: ['Seeking Help', 'Sharing']
     },
     description: {
         type: String,

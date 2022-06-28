@@ -10,7 +10,7 @@
         <div>Comments:</div>
         <div><%- project.comment.map(c => c.content) %></div>
         <% if(user) { %>
-            <form id="add-review-form" method="POST" action="/projects/<%= project._id %>/comments">
+            <form id="add-project-form" method="POST" action="/projects/<%= project._id %>/comments">
                 <label>Comment</label>
                 <textarea name="content"></textarea>
                 <input type="submit" value="Add Comment">

@@ -19,6 +19,7 @@ function newProject(req, res) {
 
 function show(req, res) {
   Project.findById(req.params.id, function(err, project) {
+    console.log('Show Project:', project);
           res.render('projects/show', {project});
   });
 }

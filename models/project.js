@@ -30,7 +30,7 @@ const projectSchema = new Schema({
         type: String,
         required: true
     },
-    comments: [commentSchema]
+    comment: [commentSchema]
 }, {
     timestamps: true
 })

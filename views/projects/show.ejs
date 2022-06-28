@@ -1,0 +1,19 @@
+<%- include("../partials/header")  %> 
+    <h1>Project's Details</h1>
+    <section id="show-page">
+        <div>Title: </div>
+        <div><%= project.title %></div>
+        <div>Posting: </div>
+        <div><%= project.posting %></div>
+        <div>Description: </div>
+        <div><%= project.description %></div>
+        <div>Comments:</div>
+        <div><%- project.comment.map(c => c.content) %></div>
+        <% if(user) { %>
+            <form id="add-review-form" method="POST" action="/projects/<%= project._id %>/comments">
+                <label>Comment</label>
+                <textarea name="content"></textarea>
+                <input type="submit" value="Add Comment">
+        <% } %>
+      </section>
+<%- include("../partials/footer")  %> 

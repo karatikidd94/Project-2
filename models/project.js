@@ -30,18 +30,7 @@ const projectSchema = new Schema({
         type: String,
         required: true
     },
-    image: {
-        data: Buffer,
-        contentType: String
-    },
-    comment: [commentSchema],
-    user: {
-        type: Schema.Types.ObjectId, 
-        ref: 'User', 
-        required: true
-    },
-    userName: String,
-    userAvatar: String
+    comments: [commentSchema]
 }, {
     timestamps: true
 })

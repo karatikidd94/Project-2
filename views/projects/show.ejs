@@ -12,8 +12,9 @@
     </section>
     <% if(user) { %>
         <form id="add-project-form" method="POST" action="/projects/<%= project._id %>/comments">
-            <label>Comment</label>
             <textarea name="content"></textarea>
             <input type="submit" value="Add Comment">
+        </form>
+        <h2>Comments</h2>
     <% } %>
 <%- include("../partials/footer")  %> 

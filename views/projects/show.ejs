@@ -7,8 +7,7 @@
         <div><%= project.posting %></div>
         <div>Description: </div>
         <div><%= project.description %></div>
-        <div>Comments:</div>
-        <div><%- project.comment.map(c => c.content) %></div>
+        <!-- <div>Comments:</div> -->
     </section>
     <% if(user) { %>
         <form id="add-project-form" method="POST" action="/projects/<%= project._id %>/comments">
@@ -16,5 +15,27 @@
             <input type="submit" value="Add Comment">
         </form>
         <h2>Comments</h2>
-    <% } %>
+        <table>
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Date</th>
+                <th>Comment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let total = 0 %>
+              <% project.comment.forEach(function(r) { %>
+                <% total += r.rating %>
+                <tr>
+                  <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
+                  <td><%= r.createdAt.toLocaleDateString() %></td>
+                  <td><%= r.content %></td>
+              </tr>
+              <% }); %>
+            </tbody>
+          </table>  
+        <% } else { %>
+          <h5>No Reviews Yet</h5>
+        <% } %>
 <%- include("../partials/footer")  %> 

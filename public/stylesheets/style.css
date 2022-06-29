@@ -6,7 +6,7 @@
   
   body {
     margin: 0;
-    height: 100vh;
+    /* height: 100vh; */
     display: grid;
     grid-template-rows: 50px 1fr;
     grid-template-areas: 
@@ -35,18 +35,29 @@
     padding: 10px;
     text-align: center;
   }
+  
+  #show-page {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  
   #new-project,
   #add-project-form {
-    margin: 0 auto;
-    padding-top: 20px;
-    height: 100vh;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+    padding-top: 50px;
   }
 
-  #show-page {
-    margin: 0 auto;
-    padding: auto;
-    height: 100vh;
-  }
+  #add-project-form input[type="submit"]  {
+  width: 10rem;
+  grid-column: 2 / 3;
+}
 
   .nav-link-logout {
     color: red;

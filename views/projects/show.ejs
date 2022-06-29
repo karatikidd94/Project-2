@@ -3,6 +3,8 @@
     <section id="show-page">
         <div>Title: </div>
         <div><%= project.title %></div>
+        <div>Category: </div>
+        <div><%= project.category %></div>
         <div>Posting: </div>
         <div><%= project.posting %></div>
         <div>Description: </div>
@@ -24,13 +26,11 @@
               </tr>
             </thead>
             <tbody>
-              <% let total = 0 %>
-              <% project.comment.forEach(function(r) { %>
-                <% total += r.rating %>
+              <% project.comment.forEach(function(c) { %>
                 <tr>
-                  <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
-                  <td><%= r.createdAt.toLocaleDateString() %></td>
-                  <td><%= r.content %></td>
+                  <td class="review-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+                  <td><%= c.createdAt.toLocaleDateString() %></td>
+                  <td><%= c.content %></td>
               </tr>
               <% }); %>
             </tbody>

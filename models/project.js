@@ -23,6 +23,10 @@ const projectSchema = new Schema({
         type: String,
         required: true
     },
+    category: {
+        type: String,
+        enum: ['Code', 'Electronics', 'Cars', 'Hobbies', 'Home Remodel', 'Art', 'Other']
+    },
     posting: {
         type: String,
         enum: ['Seeking Help', 'Sharing']

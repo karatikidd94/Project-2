@@ -4,6 +4,7 @@
         <thead>
           <tr>
             <th>Project</th>
+            <th>Category</th>
             <th>Description</th>
             <th>Posting</th>
             <th></th>
@@ -13,6 +14,7 @@
           <% projects.forEach(function(p) { %>
             <tr>
               <td><%= p.title %></td>
+              <td><%= p.category %></td>
               <td><%= p.description %></td>
               <td><%= p.posting %></td>
               <td><a href="/projects/<%= p._id %>">DETAILS</a></td>

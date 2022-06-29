@@ -3,13 +3,23 @@
     <form id="new-project" action="/projects" method="POST">
         <label>Title:</label>
         <input type="text" name="title">
+        <label>Category:</label>
+        <select name="category">
+          <option value="Code">Code</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Cars">Cars</option>
+          <option value="Hobbies">Hobbies</option>
+          <option value="Home Remodel">Home Remodel</option>
+          <option value="Art">Art</option>
+          <option value="Other">Other</option>
+        </select>
         <label>Posting:</label>
         <select name="posting">
           <option value="Seeking Help">Seeking Help</option>
           <option value="Sharing">Sharing</option>
         </select>
         <label>Description:</label>
-        <input type="text" name="description">
+        <textarea name="description"></textarea>
         <input type="submit" value="Add Project">
       </form>
 <%- include("../partials/footer")  %> 

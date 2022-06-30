@@ -1,6 +1,6 @@
 <%- include("../partials/header")  %> 
-    <h1>Project's Details</h1>
-    <section id="show-page">
+    <!-- <h1>Project Details</h1> -->
+    <!-- <section id="show-page">
         <div>Title: </div>
         <div><%= project.title %></div>
         <div>Category: </div>
@@ -9,9 +9,22 @@
         <div><%= project.posting %></div>
         <div>Description: </div>
         <div><%= project.description %></div>
-        
-        <!-- <div>Comments:</div> -->
-    </section>
+      </section> -->
+      <div class="card text-white bg-light mb-3 border-secondary mb-3" style="width: 35rem; height: 23rem; margin: auto; margin-top: 30px;">
+        <div class="card-header border-secondary mb-3" style="font-size: 25px;"><%= project.title %></div>
+        <div class="card-body" style="padding: 10px">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-secondary">Category: <%= project.category %></li>
+            <li class="list-group-item list-group-item-secondary">Posting: <%= project.posting %></li>
+          </ul>
+          <div class="card border-secondary mb-3" style="margin-top: 25px">
+            <div class="card-header border-secondary mb-3">Description</div>
+            <div class="card-body">
+              <p class="card-text"><%= project.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
     <% if(user) { %>
         <form id="add-project-form" method="POST" action="/projects/<%= project._id %>/comments">
             <textarea name="content"></textarea>

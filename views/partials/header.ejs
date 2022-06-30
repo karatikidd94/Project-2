@@ -11,7 +11,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">Project Social</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -27,13 +27,20 @@
                     <ul class="navbar-nav">
                         <% if (user) { %>
                             <li class="nav-item">
-                                <a class="nav-link-home" href="/projects">All Project</a>
-                                <a class="nav-link-add" href="/projects/new">Add Project</a>
-                                <a class="nav-link-logout" href="/logout">Log Out</a>
+                                <a class="nav-link" href="/profile">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/projects">All Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/projects/new">Add Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Log Out</a>
                             </li>
                         <% } else { %>
                         <li class="nav-item">
-                            <a class="nav-link-loggin" href="/auth/google">Log In</a>
+                            <a class="nav-link" href="/auth/google">Log In</a>
                         </li>
                         <% }  %> 
                     </ul>

@@ -6,19 +6,28 @@
             <th>Project</th>
             <th>Category</th>
             <th>Description</th>
+            <th>Comments</th>
             <th>Posting</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
+          <% let total = 0 %>
           <% projects.forEach(function(p) { %>
+            <% p.comment.forEach(function(c) { %>
+              <% total++ %>
+              <% console.log(total)%>
+              <%})%>
             <tr>
               <td><%= p.title %></td>
               <td><%= p.category %></td>
               <td><%= p.description %></td>
+              <td><%= total %></td>
               <td><%= p.posting %></td>
-              <td><a href="/projects/<%= p._id %>">DETAILS</a></td>
+              <!-- <td><a href="/projects/<%= p._id %>">DETAILS</a></td> -->
+              <td><a class="btn btn-link" href="/projects/<%= p._id %>" role="button">Details</a></td>
             </tr>
+            <% total = 0 %>
             <% }); %>
           </tbody>
         </table>

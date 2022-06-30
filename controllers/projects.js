@@ -1,4 +1,5 @@
 const Project = require('../models/project');
+const User = require('../models/user');
 
 module.exports = {
   index,
@@ -8,6 +9,9 @@ module.exports = {
 };
 
 function index(req, res) {
+  User.find({}, function(err, user) {
+    console.log('user:' , user)
+  });
   Project.find({}, function(err, projects) {
     res.render('projects/index', {projects});
   });

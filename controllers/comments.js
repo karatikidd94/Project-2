@@ -1,7 +1,9 @@
 const Project = require('../models/project');
 
+
 module.exports = {
-  create
+  create,
+  delete: deleteComment
 };
 
 function create(req, res) {
@@ -22,4 +24,20 @@ function create(req, res) {
             res.redirect(`/projects/${project._id}`)
         })
     })
+}
+
+async function deleteComment(req, res, next) {
+    const project = await Project.findOne({'comment._id': req.params.id,
+    'comment.user': req.user._id})
+    .then(function(project){
+        if(!project) return res.redirect('/projects');
+
+        project.comment.remove(req.params.id);
+
+        project.save().then(function() {
+            res.redirect(`/projects/${project._id}`);
+        }).catch(function(err) {
+            return next(err);
+        });
+    });
 }

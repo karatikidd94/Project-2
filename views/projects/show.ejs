@@ -31,6 +31,13 @@
                   <td class="review-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
                   <td><%= c.createdAt.toLocaleDateString() %></td>
                   <td><%= c.content %></td>
+                  <td>
+                    <% if (user && user._id.equals(c.user)) { %>
+                      <form action="/projects/<%= c._id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>
+                    <% } %>
+                  </td>
               </tr>
               <% }); %>
             </tbody>

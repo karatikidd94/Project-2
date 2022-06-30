@@ -1,25 +1,40 @@
 <%- include("../partials/header")  %> 
-    <h1>Add Project</h1>
-    <form id="new-project" action="/projects" method="POST">
-        <label>Title:</label>
-        <input type="text" name="title">
-        <label>Category:</label>
-        <select name="category">
-          <option value="Code">Code</option>
-          <option value="Electronics">Electronics</option>
-          <option value="Cars">Cars</option>
-          <option value="Hobbies">Hobbies</option>
-          <option value="Home Remodel">Home Remodel</option>
-          <option value="Art">Art</option>
-          <option value="Other">Other</option>
-        </select>
-        <label>Posting:</label>
-        <select name="posting">
-          <option value="Seeking Help">Seeking Help</option>
-          <option value="Sharing">Sharing</option>
-        </select>
-          <label>Description:</label>
-          <textarea name="description"></textarea>
-          <input type="submit" class="btn btn-success" value="Submit">
-      </form>
-<%- include("../partials/footer")  %> 
+  <form action="/projects" method="POST">
+    <div class="card border-secondary mb-3" style="width: 35rem; height: 28rem; margin: 0 auto; margin-top: 30px;">
+      <h5 class="card-header border-secondary mb-3">Add Project</h5>
+      <div class="card-body">
+      
+    </div>
+    <div class="form-group ">
+      <label for="exampleFormControlInput1">Title</label>
+      <input type="text" class="form-control border-secondary mb-3" id="exampleFormControlInput1" name="title">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Select Category</label>
+      <select class="form-control border-secondary mb-3" id="exampleFormControlSelect1" name="category">
+        <option value=""></option>
+        <option value="Code">Code</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Cars">Cars</option>
+        <option value="Hobbies">Hobbies</option>
+        <option value="Home Remodel">Home Remodel</option>
+        <option value="Art">Art</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Select Posting</label>
+      <select class="form-control border-secondary mb-3" id="exampleFormControlSelect1" name="posting">
+        <option value=""></option>
+        <option value="Seeking Help">Seeking Help</option>
+        <option value="Sharing">Sharing</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Discription</label>
+      <textarea class="form-control border-secondary mb-3" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <input type="submit" class="btn btn-success" value="Submit">
+  </div>
+  </form>
+  <%- include("../partials/footer")  %> 

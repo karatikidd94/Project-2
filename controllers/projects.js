@@ -30,7 +30,7 @@ function show(req, res) {
 
 function create(req, res) {
   const project = new Project(req.body);
-  project.save(function(err) {
+  project.save(function(err, project) {
       // if we don't redirect, the new page will be shown
       // with /movies in the address bar
       if (err) return res.redirect('/projects/new');

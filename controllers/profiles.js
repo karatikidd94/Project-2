@@ -6,7 +6,7 @@ module.exports = {
 };
 
 function index(req, res) {
-  User.find({}, function(err, user) {
+  User.findById(req.user.id, function(err, user) {
     res.render('profiles/index', {user});
   });
 }

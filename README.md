@@ -1,8 +1,8 @@
 # Project-2
 
-Description: An app where users can post their projects either to share with others or seeking help as well as making new connections.
-
 App Title: Project Social
+
+Description: An app where users can post their projects either to share with others or seeking help as well as making new connections.
 
 Screenshots: 
 

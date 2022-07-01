@@ -6,7 +6,7 @@ Description: An app where users can post their projects either to share with oth
 
 Screenshots: 
 
-Getting Started: https://project-2-code.herokuapp.com/projects
+Getting Started: https://project-2-code.herokuapp.com
 
 Trello Board: https://trello.com/b/2UDJSAoa/project-2
 

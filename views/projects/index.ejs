@@ -1,34 +1,39 @@
 <%- include("../partials/header")  %> 
-    <h1>Project List</h1>
-    <table id="list">
-        <thead>
-          <tr>
-            <th>Project</th>
-            <th>Category</th>
-            <!-- <th>Description</th> -->
-            <th>Posting</th>
-            <th>Comments</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% let total = 0 %>
-          <% projects.forEach(function(p) { %>
-            <% p.comment.forEach(function(c) { %>
-              <% total++ %>
-              <% console.log(total)%>
-              <%})%>
-            <tr>
-              <td><%= p.title %></td>
-              <td><%= p.category %></td>
-              <!-- <td><%= p.description %></td> -->
-              <td><%= p.posting %></td>
-              <td><%= total %></td>
-              <!-- <td><a href="/projects/<%= p._id %>">DETAILS</a></td> -->
-              <td><a class="btn btn-link" href="/projects/<%= p._id %>" role="button">Details</a></td>
-            </tr>
-            <% total = 0 %>
-            <% }); %>
-          </tbody>
+  <div class="container">
+    <div class="text-center">
+      <h1>Project List</h1>
+      <div class="table-responsive-lg">
+        <table class="table table-striped align-middle table-bordered border-dark">
+            <thead class="table-dark fs-3">
+              <tr>
+                <th scope="col">Project</th>
+                <th scope="col">Category</th>
+                <th scope="col">Posting</th>
+                <th scope="col">Comments</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% let total = 0 %>
+              <% projects.forEach(function(p) { %>
+                <% p.comment.forEach(function(c) { %>
+                  <% total++ %>
+                  <% console.log(total)%>
+                  <%})%>
+                <tr>
+                  <td><%= p.title %></td>
+                  <td><%= p.category %></td>
+                  <td><%= p.posting %></td>
+                  <td><%= total %></td>
+                  <td>
+                    <a class="btn text-white btn-primary" href="/projects/<%= p._id %>" role="button">Details</a>
+                    <a class="btn text-white btn-danger" role="button">Delete</a>
+                  </td>
+                </tr>
+                <% total = 0 %>
+              <% }); %>
+            </tbody>
         </table>
+    </div>
+  </div>
 <%- include("../partials/footer")  %> 

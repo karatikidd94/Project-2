@@ -1,16 +1,5 @@
 <%- include("../partials/header")  %> 
-    <!-- <h1>Project Details</h1> -->
-    <!-- <section id="show-page">
-        <div>Title: </div>
-        <div><%= project.title %></div>
-        <div>Category: </div>
-        <div><%= project.category %></div>
-        <div>Posting: </div>
-        <div><%= project.posting %></div>
-        <div>Description: </div>
-        <div><%= project.description %></div>
-      </section> -->
-      <div class="card text-white bg-light mb-3 border-secondary mb-3" style="width: 35rem; height: 23rem; margin: auto; margin-top: 30px;">
+      <div class="card text-center bg-light mb-3 border-secondary mb-3" style="width: 35rem; height: 23rem; margin: auto; margin-top: 30px;">
         <div class="card-header border-secondary mb-3" style="font-size: 25px;"><%= project.title %></div>
         <div class="card-body" style="padding: 10px">
           <ul class="list-group">
@@ -27,27 +16,30 @@
       </div>
     <% if(user) { %>
         <form id="add-project-form" method="POST" action="/projects/<%= project._id %>/comments">
-            <textarea name="content"></textarea>
-            <input type="submit" value="Add Comment">
+          <div class="form-floating postition-relative">
+            <textarea class="form-floating position-absolute start-50 translate-middle-x w-25 p-3"  id="floatingTextarea2" name="content"></textarea>
+          </div>
+          <input type="submit" value="Add Comment">
         </form>
         <h2>Comments</h2>
-        <table>
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Date</th>
-                <th>Comment</th>
-              </tr>
-            </thead>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">User</th>
+              <th scope="col">Date</th>
+              <th scope="col">Comment</th>
+            </tr>
+          </thead>
             <tbody>
               <% project.comment.forEach(function(c) { %>
                 <tr>
-                  <td class="review-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
-                  <td><%= c.createdAt.toLocaleDateString() %></td>
-                  <td><%= c.content %></td>
-                  <td>
+                  <td class="align-middle"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+                  <td class="align-middle"><%= c.createdAt.toLocaleDateString() %></td>
+                  <td class="align-middle"><%= c.content %></td>
+                  <td class="align-middle">
                     <% if (user && user._id.equals(c.user)) { %>
                       <form action="/projects/<%= c._id %>?_method=DELETE" method="POST">
+                        <a class="btn text-white btn-secondary" role="button">Edit</a>
                         <button type="submit" class="btn btn-danger">Delete</button>
                       </form>
                     <% } %>
